@@ -1,45 +1,15 @@
 import { useState } from 'react'
 import logo from './logo.svg'
-import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+    <div className="w-full h-screen flex flex-col justify-between align-top bg-red-200">
+      <h1 className="basis-1/4 place-content-center font-bold text-2xl text-blue-900">
+        React and Tailwind with Vitejs!
+      </h1>
+      <img className="basis-1/2 hover:animate-spin" src={logo} />
     </div>
-  )
+  );
 }
 
 export default App
