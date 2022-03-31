@@ -2,11 +2,8 @@ import logo from "./logo.svg";
 
 function Header() {
   return (
-    <header className="absolute left-0 top-0 p-2">
-      <img
-        className="h-8 object-contain basis-32 hover:animate-spin"
-        src={logo}
-      />
+    <header className="absolute left-0 top-0 w-full p-2 flex justify-center">
+      <img className="h-8 basis-32 hover:animate-spin" src={logo} />
     </header>
   );
 }
