@@ -11,12 +11,12 @@ function Card(props) {
   const answer = text.substring(start + 2, end);
 
   const cardCSS = `flex justify-center items-center w-80 h-96 rounded-2xl bg-neutral-800 text-lg ${
-    data[props.id].hidden ? "border border-white" : null
+    data[props.id].open ? "border border-white" : null
   }`;
   const answerCSS = `${
-    data[props.id].hidden
+    data[props.id].open
       ? "text-sky-400"
-      : "underline decoration-white underline-offset-2 text-neutral-800"
+      : "underline decoration-neutral-500 underline-offset-4 text-neutral-800"
   }`;
 
   return (
@@ -24,7 +24,7 @@ function Card(props) {
       className={cardCSS}
       onClick={() => {
         const copy = [...data];
-        copy[props.id].hidden = !copy[props.id].hidden;
+        copy[props.id].open = !copy[props.id].open;
         setData(copy);
       }}
     >
