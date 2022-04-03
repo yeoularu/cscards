@@ -1,10 +1,10 @@
-import { useState } from "react";
-import Card from "./Card.jsx";
+import { useState, useEffect } from "react";
 import Header from "./Header.jsx";
+import Card from "./Card.jsx";
 import data from "./data.js";
 
 function App() {
-  let [id, setId] = useState(0);
+  const [id, setId] = useState(0);
 
   return (
     <div className="bg-neutral-900">

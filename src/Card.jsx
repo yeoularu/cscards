@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import data from "./data.js";
+import useLocalStorage from "./useLocalStorage";
+import initialData from "./data.js";
 
 function Card(props) {
-  let [hidden, setHidden] = useState(true);
+  const [data, setData] = useLocalStorage("data", initialData);
 
   const text = data[props.id].text;
   const start = text.indexOf("**");
@@ -22,8 +23,9 @@ function Card(props) {
     <div
       className={cardCSS}
       onClick={() => {
-        setHidden(!hidden);
-        data[props.id].hidden = hidden;
+        const copy = [...data];
+        copy[props.id].hidden = !copy[props.id].hidden;
+        setData(copy);
       }}
     >
       <p className="w-64 rounded-full text-white text-center break-keep">
