@@ -13,7 +13,9 @@ function Card(props) {
     data[props.id].hidden ? "border border-white" : null
   }`;
   const answerCSS = `${
-    data[props.id].hidden ? "text-sky-400" : "text-neutral-800"
+    data[props.id].hidden
+      ? "text-sky-400"
+      : "underline decoration-white underline-offset-2 text-neutral-800"
   }`;
 
   return (
